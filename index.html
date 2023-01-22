@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/index.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/index.css" />
     <script src="./js/app.js" defer></script>
     <title>Library</title>
   </head>
   <body>
     <form id="myForm">
-      <label for='author'>Author: </label>
-      <input id='author' type= 'text' name='author' required/>
-      <label for='title'>Title: </label>
-      <input id='title' type= 'text' name='title' required/>
-      <label for='pagesNum'>Number of pages:</label>
-      <input id='pagesNum' type= 'number' name='pagesNum' min="0" required/>
-      <label for="read">Read</label>
-      <input type="checkbox" id="read" name="read" value="read"/>
-      <button id=submitBtn>NEW BOOK</button>
+      <label for="author">Author: </label>
+      <input id="author" type="text" name="author" required />
+      <label for="title">Title: </label>
+      <input id="title" type="text" name="title" required />
+      <label for="pagesNum">Number of pages:</label>
+      <input id="pagesNum" type="number" name="pagesNum" min="0" required />
+      <label for="read-status">Read</label>
+      <select id='read-status'>
+        <option value="read" selected>Read</option>
+        <option value="not read yet">Not read yet</option>
+      </select>
+      
+      <button id="submitBtn">NEW BOOK</button>
     </form>
-    <div class='container'></div>
+    <div class="container"></div>
   </body>
 </html>

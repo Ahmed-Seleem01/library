@@ -20,6 +20,37 @@ function addBookToLibrary(book) {
   myLibrary.push(book);
 }
 
+function createBtn(name) {
+  const btn = document.createElement("button");
+  btn.textContent = name;
+  btn.setAttribute("class", name.toLowerCase());
+  return btn;
+}
+
+function removeElms(e) {
+    const parentElm = e.target.parentElement.parentElement;
+    const elmIndex = parentElm.getAttribute('data-index');
+    myLibrary.splice(elmIndex, 1);
+    showBooks(myLibrary);
+}
+
+function readCondition(e){
+    const parentElm = e.target.parentElement.parentElement;
+    const elmIndex = parentElm.getAttribute('data-index');
+    myLibrary[elmIndex].readStatus();
+}
+
+function addButtons(){
+  const removeBtn = createBtn("Remove");
+  const readBtn = createBtn("Read");
+  removeBtn.addEventListener('click', removeElms);
+  readBtn.addEventListener('click', readCondition)
+  const btnContainer = document.createElement("div");
+  btnContainer.appendChild(removeBtn);
+  btnContainer.appendChild(readBtn);
+  return btnContainer;
+}
+
 function showBooks(arr) {
   const container = document.querySelector(".container");
   container.innerHTML = "";
@@ -29,6 +60,8 @@ function showBooks(arr) {
     Author: ${arr[i].author} 
     Pages: ${arr[i].pagesNum}`;
     bookDiv.setAttribute("data-index", i);
+    const btnContainer = addButtons();
+    bookDiv.appendChild(btnContainer);
     container.appendChild(bookDiv);
   }
 }

@@ -1,0 +1,9 @@
+#myForm{
+  padding: 30px;
+  background-color: bisque;
+}
+
+label, form button{
+  display: block;
+  margin-top: 20px;
+}

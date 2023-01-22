@@ -32,7 +32,19 @@ submitBtn.addEventListener("click", (e) => {
   );
   addBookToLibrary(book);
   // createArrBooks(myLibrary);
-  //showBooks(myLibrary);
+  // showBooks(myLibrary);
   console.log(myLibrary);
 });
 
+function showBooks(arr) {
+  const container = document.querySelector(".container");
+  container.innerHTML = "";
+  for (let i = 0; i < arr.length; i++) {
+    const bookDiv = document.createElement("div");
+    bookDiv.innerText = `Book: ${arr[i].title} 
+    Author: ${arr[i].author} 
+    Pages: ${arr[i].pagesNum}`;
+    bookDiv.setAttribute("data-index", i);
+    container.appendChild(bookDiv);
+  }
+}

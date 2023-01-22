@@ -7,3 +7,16 @@ label, form button{
   display: block;
   margin-top: 20px;
 }
+
+div[data-index]{
+  display: block;
+  padding: 20px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+div[data-index] button{
+  padding: 10px 1px;;
+  margin-right: 20px;
+  width: 75px;
+}

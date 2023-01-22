@@ -1,3 +1,12 @@
+html{
+  font-size: 14px;
+}
+
+*{
+  box-sizing: border-box;
+  font-size: 1.5rem;;
+}
+
 #myForm{
   padding: 30px;
   background-color: bisque;
@@ -8,16 +17,32 @@ label, form button{
   margin-top: 20px;
 }
 
+#myForm input, #myForm select{
+  padding: 10px;
+  font-size: 20px;
+}
+
+.container div:nth-child(even){
+  background-color: lightblue;
+}
+
 div[data-index]{
   display: block;
   padding: 20px 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-radius: 10px;
 }
-div[data-index] button{
+div[data-index] button, #myForm button{
   padding: 20px 1px;;
   margin-right: 20px;
-  width: 200px;
+  width: 150px;
   font-size: 1rem;
+  cursor: pointer;
+  border: 2px solid rgb(145, 145, 239);
+  border-radius: 10px;
+}
+div[data-index] button:active, #myForm button:active{
+  background-color: #baecba;
 }

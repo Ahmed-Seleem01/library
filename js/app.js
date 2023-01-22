@@ -14,6 +14,7 @@ Book.prototype.readStatus = function () {
   } else {
     this.read = "not read yet";
   }
+  return this.read;
 };
 
 function addBookToLibrary(book) {
@@ -37,7 +38,7 @@ function removeElms(e) {
 function readCondition(e){
     const parentElm = e.target.parentElement.parentElement;
     const elmIndex = parentElm.getAttribute('data-index');
-    myLibrary[elmIndex].readStatus();
+    e.target.textContent =  myLibrary[elmIndex].readStatus();
 }
 
 function addButtons(){
@@ -76,6 +77,7 @@ submitBtn.addEventListener("click", (e) => {
     formElements[2].value,
     formElements[3].value
   );
+  //console.log(formElements[3].value)
   addBookToLibrary(book);
   showBooks(myLibrary);
   console.log(myLibrary);

@@ -1,6 +1,7 @@
 // Array to store books
 const myLibrary = [];
 
+// Class function to create book objects
 class Book {
   constructor(author = "", title = "", pagesNum = "", read = "Not read yet") {
     this.author = author;
@@ -9,6 +10,7 @@ class Book {
     this.read = read;
   }
 
+  // Change read status
   readStatus() {
     // console.log(this)
     if (this.read === "Not read yet") {
@@ -38,6 +40,7 @@ function removeElms(e) {
   showBooks(myLibrary);
 }
 
+// Change read status
 function readCondition(e) {
   const parentElm = e.target.parentElement.parentElement;
   const elmIndex = parentElm.getAttribute("data-index");
@@ -57,12 +60,12 @@ function addButtons() {
 
 function showBooks(arr) {
   const container = document.querySelector(".container");
-  container.innerHTML = "";
+  container.textContent = "";
   for (let i = 0; i < arr.length; i++) {
     const bookDiv = document.createElement("div");
     bookDiv.innerText = `Title: ${arr[i].title} 
-    Author: ${arr[i].author} 
-    Pages: ${arr[i].pagesNum}`;
+                        Author: ${arr[i].author} 
+                        Pages: ${arr[i].pagesNum}`;
     bookDiv.setAttribute("data-index", i);
     const btnContainer = addButtons();
     btnContainer.querySelector(".read").textContent = arr[i].read;

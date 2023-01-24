@@ -1,22 +1,24 @@
 // Array to store books
 const myLibrary = [];
 
-function Book(author = "", title = "", pagesNum = "", read = "Not read yet") {
-  this.author = author;
-  this.title = title;
-  this.pagesNum = pagesNum;
-  this.read = read;
-}
-
-Book.prototype.readStatus = function readStatus () {
-  // console.log(this)
-  if (this.read === "Not read yet") {
-    this.read = "Read";
-  } else {
-    this.read = "Not read yet";
+class Book {
+  constructor(author = "", title = "", pagesNum = "", read = "Not read yet") {
+    this.author = author;
+    this.title = title;
+    this.pagesNum = pagesNum;
+    this.read = read;
   }
-  return this.read;
-};
+
+  readStatus() {
+    // console.log(this)
+    if (this.read === "Not read yet") {
+      this.read = "Read";
+    } else {
+      this.read = "Not read yet";
+    }
+    return this.read;
+  }
+}
 
 function addBookToLibrary(book) {
   myLibrary.push(book);

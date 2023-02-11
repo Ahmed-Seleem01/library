@@ -12,14 +12,21 @@ html{
   background-color: bisque;
 }
 
-label, form button{
+#myForm *, form button{
   display: block;
-  margin-top: 20px;
 }
 
 #myForm input, #myForm select{
   padding: 10px;
   font-size: 20px;
+}
+
+#myForm div{
+  margin-bottom: 20px;
+}
+
+.error{
+  color: red;
 }
 
 .container div:nth-child(even){

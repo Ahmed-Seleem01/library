@@ -46,3 +46,13 @@ div[data-index] button, #myForm button{
 div[data-index] button:active, #myForm button:active{
   background-color: #baecba;
 }
+
+input:invalid{
+  border: 2px solid red;
+  background-color: rgb(230, 171, 171);
+}
+
+input:valid{
+  border: 2px solid blue;
+  background-color: rgb(153, 186, 226);
+}

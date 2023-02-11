@@ -3,7 +3,7 @@ const myLibrary = [];
 
 // Class function to create book objects
 class Book {
-  constructor(author = "", title = "", pagesNum = "", read = "Not read yet") {
+  constructor(title = "", author = "", pagesNum = "", read = "Not read yet") {
     this.author = author;
     this.title = title;
     this.pagesNum = pagesNum;
@@ -11,12 +11,14 @@ class Book {
   }
 
   // Change read status
-  readStatus() {
+  readStatus(e) {
     // console.log(this)
     if (this.read === "Not read yet") {
       this.read = "Read";
+      e.target.style.backgroundColor = 'green';
     } else {
       this.read = "Not read yet";
+      e.target.style.backgroundColor = 'red';
     }
     return this.read;
   }
@@ -44,7 +46,8 @@ function removeElms(e) {
 function readCondition(e) {
   const parentElm = e.target.parentElement.parentElement;
   const elmIndex = parentElm.getAttribute("data-index");
-  e.target.textContent = myLibrary[elmIndex].readStatus();
+  e.target.textContent = myLibrary[elmIndex].readStatus(e);
+  
 }
 
 function addButtons() {
@@ -74,18 +77,49 @@ function showBooks(arr) {
   }
 }
 
-const submitBtn = document.querySelector("#submitBtn");
-submitBtn.addEventListener("click", (e) => {
+// Check for the validity by custom validation API
+const title = document.querySelector("#title");
+const author = document.querySelector("#author");
+const pages = document.querySelector("#pagesNum");
+
+function checkValidity(targetElm) {
+  const err = document.querySelector(`#${targetElm.id} + span.error`);
+  // console.log(targetElm)
+  if (targetElm.validity.valueMissing) {
+    err.textContent = "type something";
+  } else if (targetElm.validity.typeMismatch) {
+    err.textContent = "type is not match";
+  } else {
+    err.textContent = "";
+  }
+}
+title.addEventListener("input", checkValidity.bind(null, title));
+author.addEventListener("input", checkValidity.bind(null, author));
+pages.addEventListener("input", checkValidity.bind(null, pages));
+
+const formElm = document.querySelector("#myForm");
+formElm.addEventListener("submit", (e) => {
   e.preventDefault();
-  const formElements = document.querySelector("#myForm").elements;
-  const book = new Book(
-    formElements[0].value,
-    formElements[1].value,
-    formElements[2].value,
-    formElements[3].value
-  );
-  // console.log(formElements[3].value);
-  addBookToLibrary(book);
-  showBooks(myLibrary);
+  if (title.validity.valid && author.validity.valid && pages.validity.valid) {
+    const formElements = document.querySelector("#myForm").elements;
+    const book = new Book(
+      formElements[0].value,
+      formElements[1].value,
+      formElements[2].value,
+      formElements[3].value
+    );
+    formElements[0].value = "";
+    formElements[1].value = "";
+    formElements[2].value = "";
+
+    // console.log(formElements[3].value);
+    addBookToLibrary(book);
+    showBooks(myLibrary);
+  } else {
+    checkValidity(title);
+    checkValidity(author);
+    checkValidity(pages);
+  }
+
   // console.log(myLibrary);
 });

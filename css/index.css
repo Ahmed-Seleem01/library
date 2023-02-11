@@ -12,14 +12,21 @@ html{
   background-color: bisque;
 }
 
-label, form button{
+#myForm *, form button{
   display: block;
-  margin-top: 20px;
 }
 
 #myForm input, #myForm select{
   padding: 10px;
   font-size: 20px;
+}
+
+#myForm div{
+  margin-bottom: 20px;
+}
+
+.error{
+  color: red;
 }
 
 .container div:nth-child(even){
@@ -45,4 +52,14 @@ div[data-index] button, #myForm button{
 }
 div[data-index] button:active, #myForm button:active{
   background-color: #baecba;
+}
+
+input:invalid{
+  border: 2px solid red;
+  background-color: rgb(230, 171, 171);
+}
+
+input:valid{
+  border: 2px solid blue;
+  background-color: rgb(153, 186, 226);
 }

@@ -9,13 +9,16 @@
     <title>Library</title>
   </head>
   <body>
-    <form id="myForm">
-      <label for="author">Author: </label>
-      <input id="author" type="text" name="author" required />
+    <form id="myForm" novalidate>
       <label for="title">Title: </label>
       <input id="title" type="text" name="title" required />
+      <span class="error"></span>
+      <label for="author">Author: </label>
+      <input id="author" type="text" name="author" required />
+      <span class="error"></span>
       <label for="pagesNum">Number of pages:</label>
       <input id="pagesNum" type="number" name="pagesNum" min="0" required />
+      <span class="error"></span>
       <label for="read-status">Read</label>
       <select id='read-status'>
         <option selected>Read</option>

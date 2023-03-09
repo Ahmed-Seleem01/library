@@ -40,6 +40,7 @@ function removeElms(e) {
   const parentElm = e.target.parentElement.parentElement;
   const elmIndex = parentElm.getAttribute("data-index");
   myLibrary.splice(elmIndex, 1);
+  localStorage.setItem('myLibraryStorage', JSON.stringify(myLibrary))
   showBooks(myLibrary);
 }
 

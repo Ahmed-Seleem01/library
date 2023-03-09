@@ -94,6 +94,7 @@ function showBooks(arr) {
     container.appendChild(bookDiv);
   }
 }
+showBooks(myLibrary);
 
 // Check for the validity by custom validation API
 const title = document.querySelector("#title");
@@ -139,6 +140,6 @@ formElm.addEventListener("submit", (e) => {
     checkValidity(author);
     checkValidity(pages);
   }
-
+  
   // console.log(myLibrary);
 });

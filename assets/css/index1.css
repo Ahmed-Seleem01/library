@@ -19,8 +19,12 @@ body h1 {
   background-color: gray;
   color: white;
 }
+body h2 {
+  text-align: center;
+}
 body p {
   font-size: 1.3rem;
+  text-align: center;
 }
 
 .btn, .container div[data-index] button, .container div[data-index] .read, #myForm #submitBtn {

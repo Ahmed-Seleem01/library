@@ -1,5 +1,7 @@
 // Array to store books
-const lib = localStorage.getItem('myLibraryStorage') ? JSON.parse(localStorage.getItem('myLibraryStorage')) : [];
+const lib = localStorage.getItem("myLibraryStorage")
+  ? JSON.parse(localStorage.getItem("myLibraryStorage"))
+  : [];
 const myLibrary = [...lib];
 
 // Class function to create book objects
@@ -16,10 +18,10 @@ class Book {
     // console.log(this)
     if (this.read === "Not read yet") {
       this.read = "Read";
-      e.target.style.backgroundColor = 'green';
+      e.target.style.backgroundColor = "green";
     } else {
       this.read = "Not read yet";
-      e.target.style.backgroundColor = 'red';
+      e.target.style.backgroundColor = "red";
     }
     return this.read;
   }
@@ -40,7 +42,7 @@ function removeElms(e) {
   const parentElm = e.target.parentElement.parentElement;
   const elmIndex = parentElm.getAttribute("data-index");
   myLibrary.splice(elmIndex, 1);
-  localStorage.setItem('myLibraryStorage', JSON.stringify(myLibrary))
+  localStorage.setItem("myLibraryStorage", JSON.stringify(myLibrary));
   showBooks(myLibrary);
 }
 
@@ -49,7 +51,6 @@ function readCondition(e) {
   const parentElm = e.target.parentElement.parentElement;
   const elmIndex = parentElm.getAttribute("data-index");
   e.target.textContent = myLibrary[elmIndex].readStatus(e);
-  
 }
 
 function addButtons() {
@@ -68,17 +69,27 @@ function showBooks(arr) {
   const container = document.querySelector(".container");
   container.textContent = "";
   for (let i = 0; i < arr1.length; i++) {
-    if(!("readStatus" in arr1[i]) && !(arr1[i] instanceof Book)){
-      arr1[i] = Object.assign(arr1[i], {readStatus: Book.prototype.readStatus});
+    if (!("readStatus" in arr1[i]) && !(arr1[i] instanceof Book)) {
+      arr1[i] = Object.assign(arr1[i], {
+        readStatus: Book.prototype.readStatus,
+      });
       // console.log(arr1[i])
     }
     const bookDiv = document.createElement("div");
-    bookDiv.innerText = `Title: ${arr1[i].title} 
-                        Author: ${arr1[i].author} 
-                        Pages: ${arr1[i].pagesNum}`;
+    const bookInfo = document.createElement("div");
+
+    bookInfo.innerText = `Title: ${arr[i].title} 
+                        Author: ${arr[i].author} 
+                        Pages: ${arr[i].pagesNum}`;
+
     bookDiv.setAttribute("data-index", i);
     const btnContainer = addButtons();
-    btnContainer.querySelector(".read").textContent = arr1[i].read;
+    btnContainer.querySelector(".read").textContent = arr[i].read;
+    if (arr[i].read === "Read")
+      btnContainer.querySelector(".read").style.backgroundColor = "green";
+    else if (arr[i].read === "Not read yet")
+      btnContainer.querySelector(".read").style.backgroundColor = "red";
+    bookDiv.appendChild(bookInfo);
     bookDiv.appendChild(btnContainer);
     container.appendChild(bookDiv);
   }

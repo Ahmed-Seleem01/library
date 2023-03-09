@@ -64,16 +64,21 @@ function addButtons() {
 }
 
 function showBooks(arr) {
+  const arr1 = [...arr];
   const container = document.querySelector(".container");
   container.textContent = "";
-  for (let i = 0; i < arr.length; i++) {
+  for (let i = 0; i < arr1.length; i++) {
+    if(!("readStatus" in arr1[i]) && !(arr1[i] instanceof Book)){
+      arr1[i] = Object.assign(arr1[i], {readStatus: Book.prototype.readStatus});
+      // console.log(arr1[i])
+    }
     const bookDiv = document.createElement("div");
-    bookDiv.innerText = `Title: ${arr[i].title} 
-                        Author: ${arr[i].author} 
-                        Pages: ${arr[i].pagesNum}`;
+    bookDiv.innerText = `Title: ${arr1[i].title} 
+                        Author: ${arr1[i].author} 
+                        Pages: ${arr1[i].pagesNum}`;
     bookDiv.setAttribute("data-index", i);
     const btnContainer = addButtons();
-    btnContainer.querySelector(".read").textContent = arr[i].read;
+    btnContainer.querySelector(".read").textContent = arr1[i].read;
     bookDiv.appendChild(btnContainer);
     container.appendChild(bookDiv);
   }

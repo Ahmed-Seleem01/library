@@ -12,29 +12,30 @@
     <h1>Library</h1>
     <p>Add a book to the library</p>
     <form id="myForm" novalidate>
-      <div class="section-1">
-        <label for="title">Title: </label>
-        <input id="title" type="text" name="title" required />
-        <span class="error"></span>
+      <div class="main-section">
+        <div class="section-1">
+          <label for="title">Title: </label>
+          <input id="title" type="text" name="title" required />
+          <span class="error"></span>
+        </div>
+        <div class="section-2">
+          <label for="author">Author: </label>
+          <input id="author" type="text" name="author" required />
+          <span class="error"></span>
+        </div>
+        <div class="section-3">
+          <label for="pagesNum">Number of pages:</label>
+          <input id="pagesNum" type="number" name="pagesNum" min="0" required />
+          <span class="error"></span>
+        </div>
+        <div class="section-4">
+          <label for="read-status">Read</label>
+          <select id="read-status">
+            <option selected>Read</option>
+            <option>Not read yet</option>
+          </select>
+        </div>
       </div>
-      <div class="section-2">
-        <label for="author">Author: </label>
-        <input id="author" type="text" name="author" required />
-        <span class="error"></span>
-      </div>
-      <div class="section-3">
-        <label for="pagesNum">Number of pages:</label>
-        <input id="pagesNum" type="number" name="pagesNum" min="0" required />
-        <span class="error"></span>
-      </div>
-      <div class="section-4">
-        <label for="read-status">Read</label>
-        <select id='read-status'>
-          <option selected>Read</option>
-          <option>Not read yet</option>
-        </select>
-      </div>
-      
       <button id="submitBtn">NEW BOOK</button>
     </form>
     <div class="container"></div>

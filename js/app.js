@@ -1,5 +1,6 @@
 // Array to store books
-const myLibrary = [];
+const lib = localStorage.getItem('myLibraryStorage') ? JSON.parse(localStorage.getItem('myLibraryStorage')) : [];
+const myLibrary = [...lib];
 
 // Class function to create book objects
 class Book {

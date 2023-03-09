@@ -1,26 +1,18 @@
-html {
-  font-size: 14px;
-}
+/* Error: The target selector was not found.
+ * Use "@extend .btn !optional" to avoid this error.
+ *    ,
+ * 91 |     @extend .btn;
+ *    |     ^^^^^^^^^^^^
+ *    '
+ *   assets/scss/index1.scss 91:5  root stylesheet */
 
-* {
-  box-sizing: border-box;
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: 'Error: The target selector was not found.\aUse "@extend .btn !optional" to avoid this error.\a    \2577 \a 91 \2502      @extend .btn;\a    \2502      ^^^^^^^^^^^^\a    \2575 \a   assets/scss/index1.scss 91:5  root stylesheet';
 }
-
-body {
-  margin: 0;
-  padding: 0;
-  background-color: rgb(230, 240, 240);
-}
-body h1 {
-  text-align: center;
-  margin: 0;
-  margin-bottom: 50px;
-  padding: 30px;
-  background-color: gray;
-  color: white;
-}
-body p {
-  font-size: 1.3rem;
-}
-
-/*# sourceMappingURL=index1.css.map */

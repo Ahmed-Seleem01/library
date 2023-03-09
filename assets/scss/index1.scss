@@ -22,3 +22,78 @@ body {
     font-size: 1.3rem;
   }
 }
+
+#myForm {
+  padding: 10px 30px;
+  border-bottom: 3px solid;
+  min-width: 450px;
+  .main-section {
+    background-color: rgb(240, 240, 240);
+    border: 2px solid rgb(180, 180, 180);
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px gray;
+    padding: 20px;
+    margin: 0 auto;
+    min-width: 400px;
+    max-width: 80%;
+    display: grid;
+    grid-template: repeat(2, auto) / repeat(2, auto);
+    gap: 20px;
+    column-gap: 50px;
+    flex-wrap: wrap;
+
+    @for $i from 1 to 5 {
+      .section-#{$i} {
+        padding: 0;
+
+        label {
+          display: block;
+          font-size: 1.2rem;
+          font-weight: bold;
+          margin-bottom: 2px;
+          padding-left: 4px;
+        }
+
+        input {
+          width: 100%;
+          padding: 8px;
+          border-radius: 8px;
+          font-size: 18px;
+          display: block;
+        }
+        select {
+          @extend input;
+          padding: 8px 40px;
+          background-color: white;
+          border: 2px solid;
+        }
+
+        .error {
+          @extend input;
+          color: red;
+          padding: 10px 0;
+        }
+      }
+    }
+  }
+
+  input:invalid {
+    border: 2px solid red;
+    background-color: rgb(230, 171, 171);
+  }
+
+  input:valid:not(select:valid) {
+    border: 2px solid blue;
+    background-color: rgb(153, 186, 226);
+  }
+
+  #submitBtn {
+    @extend .btn;
+    display: block;
+    margin: 20px auto;
+  }
+
+  #submitBtn:active {
+    @extend btn-active;
+  }
+}

@@ -6,4 +6,21 @@ html {
   box-sizing: border-box;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(230, 240, 240);
+}
+body h1 {
+  text-align: center;
+  margin: 0;
+  margin-bottom: 50px;
+  padding: 30px;
+  background-color: gray;
+  color: white;
+}
+body p {
+  font-size: 1.3rem;
+}
+
 /*# sourceMappingURL=index1.css.map */

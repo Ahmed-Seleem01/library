@@ -23,6 +23,18 @@ body {
   }
 }
 
+.btn{
+  padding: 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: 2px solid rgb(145, 145, 239);
+  border-radius: 10px;
+}
+
+btn-active{
+background-color: #baecba;
+}
+
 #myForm {
   padding: 10px 30px;
   border-bottom: 3px solid;

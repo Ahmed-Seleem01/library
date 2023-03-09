@@ -1,18 +1,175 @@
-/* Error: The target selector was not found.
- * Use "@extend .btn !optional" to avoid this error.
- *    ,
- * 91 |     @extend .btn;
- *    |     ^^^^^^^^^^^^
- *    '
- *   assets/scss/index1.scss 91:5  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: 'Error: The target selector was not found.\aUse "@extend .btn !optional" to avoid this error.\a    \2577 \a 91 \2502      @extend .btn;\a    \2502      ^^^^^^^^^^^^\a    \2575 \a   assets/scss/index1.scss 91:5  root stylesheet';
+html {
+  font-size: 14px;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(230, 240, 240);
+}
+body h1 {
+  text-align: center;
+  margin: 0;
+  margin-bottom: 50px;
+  padding: 30px;
+  background-color: gray;
+  color: white;
+}
+body p {
+  font-size: 1.3rem;
+}
+
+.btn, #myForm #submitBtn {
+  padding: 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: 2px solid rgb(145, 145, 239);
+  border-radius: 10px;
+}
+
+btn-active, #myForm #submitBtn:active {
+  background-color: #baecba;
+}
+
+#myForm {
+  padding: 10px 30px;
+  border-bottom: 3px solid;
+  min-width: 450px;
+}
+#myForm .main-section {
+  background-color: rgb(240, 240, 240);
+  border: 2px solid rgb(180, 180, 180);
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px gray;
+  padding: 20px;
+  margin: 0 auto;
+  min-width: 400px;
+  max-width: 80%;
+  display: grid;
+  grid-template: repeat(2, auto)/repeat(2, auto);
+  gap: 20px;
+  column-gap: 50px;
+  flex-wrap: wrap;
+}
+#myForm .main-section .section-1 {
+  padding: 0;
+}
+#myForm .main-section .section-1 label {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 2px;
+  padding-left: 4px;
+}
+#myForm .main-section .section-1 input, #myForm .main-section .section-1 .error, #myForm .main-section .section-1 select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 18px;
+  display: block;
+}
+#myForm .main-section .section-1 select {
+  padding: 8px 40px;
+  background-color: white;
+  border: 2px solid;
+}
+#myForm .main-section .section-1 .error {
+  color: red;
+  padding: 10px 0;
+}
+#myForm .main-section .section-2 {
+  padding: 0;
+}
+#myForm .main-section .section-2 label {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 2px;
+  padding-left: 4px;
+}
+#myForm .main-section .section-2 input, #myForm .main-section .section-2 .error, #myForm .main-section .section-2 select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 18px;
+  display: block;
+}
+#myForm .main-section .section-2 select {
+  padding: 8px 40px;
+  background-color: white;
+  border: 2px solid;
+}
+#myForm .main-section .section-2 .error {
+  color: red;
+  padding: 10px 0;
+}
+#myForm .main-section .section-3 {
+  padding: 0;
+}
+#myForm .main-section .section-3 label {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 2px;
+  padding-left: 4px;
+}
+#myForm .main-section .section-3 input, #myForm .main-section .section-3 .error, #myForm .main-section .section-3 select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 18px;
+  display: block;
+}
+#myForm .main-section .section-3 select {
+  padding: 8px 40px;
+  background-color: white;
+  border: 2px solid;
+}
+#myForm .main-section .section-3 .error {
+  color: red;
+  padding: 10px 0;
+}
+#myForm .main-section .section-4 {
+  padding: 0;
+}
+#myForm .main-section .section-4 label {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 2px;
+  padding-left: 4px;
+}
+#myForm .main-section .section-4 input, #myForm .main-section .section-4 .error, #myForm .main-section .section-4 select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 18px;
+  display: block;
+}
+#myForm .main-section .section-4 select {
+  padding: 8px 40px;
+  background-color: white;
+  border: 2px solid;
+}
+#myForm .main-section .section-4 .error {
+  color: red;
+  padding: 10px 0;
+}
+#myForm input:invalid, #myForm .main-section .section-1 select:invalid, #myForm .main-section .section-1 .error:invalid, #myForm .main-section .section-2 select:invalid, #myForm .main-section .section-2 .error:invalid, #myForm .main-section .section-3 select:invalid, #myForm .main-section .section-3 .error:invalid, #myForm .main-section .section-4 select:invalid, #myForm .main-section .section-4 .error:invalid {
+  border: 2px solid red;
+  background-color: rgb(230, 171, 171);
+}
+#myForm input:valid:not(select:valid), #myForm .main-section .section-1 select:valid:not(select:valid), #myForm .main-section .section-1 .error:valid:not(select:valid), #myForm .main-section .section-2 select:valid:not(select:valid), #myForm .main-section .section-2 .error:valid:not(select:valid), #myForm .main-section .section-3 select:valid:not(select:valid), #myForm .main-section .section-3 .error:valid:not(select:valid), #myForm .main-section .section-4 select:valid:not(select:valid), #myForm .main-section .section-4 .error:valid:not(select:valid) {
+  border: 2px solid blue;
+  background-color: rgb(153, 186, 226);
+}
+#myForm #submitBtn {
+  display: block;
+  margin: 20px auto;
+}
+
+/*# sourceMappingURL=index1.css.map */

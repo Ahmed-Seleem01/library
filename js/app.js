@@ -132,6 +132,7 @@ formElm.addEventListener("submit", (e) => {
 
     // console.log(formElements[3].value);
     addBookToLibrary(book);
+    localStorage.setItem('myLibraryStorage', JSON.stringify(myLibrary))
     showBooks(myLibrary);
   } else {
     checkValidity(title);

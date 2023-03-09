@@ -23,7 +23,7 @@ body p {
   font-size: 1.3rem;
 }
 
-.btn, #myForm #submitBtn {
+.btn, .container div[data-index] button, .container div[data-index] .read, #myForm #submitBtn {
   padding: 20px;
   font-size: 1rem;
   cursor: pointer;
@@ -31,7 +31,7 @@ body p {
   border-radius: 10px;
 }
 
-btn-active, #myForm #submitBtn:active {
+btn-active, .container div[data-index] button:active, .container div[data-index] .read:active, #myForm #submitBtn:active {
   background-color: #baecba;
 }
 
@@ -170,6 +170,40 @@ btn-active, #myForm #submitBtn:active {
 #myForm #submitBtn {
   display: block;
   margin: 20px auto;
+}
+.container {
+  margin-top: 30px;
+}
+.container div[data-index] {
+  display: block;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+  gap: 10px;
+  font-size: 1.3rem;
+}
+.container div[data-index] .child-divs, .container div[data-index] div:not(div:nth-child(1)), .container div[data-index] div:nth-child(1) {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+.container div[data-index] div:nth-child(1) {
+  justify-content: flex-start;
+  min-width: 200px;
+}
+.container div[data-index] div:not(div:nth-child(1)) {
+  min-width: 150px;
+}
+.container div[data-index] button, .container div[data-index] .read {
+  padding: 10px;
+}
+.container div[data-index] .read {
+  min-width: 100px;
+}
+.container div[data-index]:nth-child(even) {
+  background-color: lightblue;
 }
 
 /*# sourceMappingURL=index1.css.map */

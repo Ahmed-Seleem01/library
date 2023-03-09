@@ -23,7 +23,7 @@ body {
   }
 }
 
-.btn{
+.btn {
   padding: 20px;
   font-size: 1rem;
   cursor: pointer;
@@ -31,8 +31,8 @@ body {
   border-radius: 10px;
 }
 
-btn-active{
-background-color: #baecba;
+btn-active {
+  background-color: #baecba;
 }
 
 #myForm {
@@ -107,5 +107,51 @@ background-color: #baecba;
 
   #submitBtn:active {
     @extend btn-active;
+  }
+}
+
+.container {
+  margin-top: 30px;
+  div[data-index] {
+    display: block;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    gap: 10px;
+    font-size: 1.3rem;
+
+    .child-divs {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      // border: 2px solid;
+    }
+    div:nth-child(1) {
+      @extend .child-divs;
+      justify-content: flex-start;
+      min-width: 200px;
+    }
+
+    div:not(div:nth-child(1)) {
+      @extend .child-divs;
+      min-width: 150px;
+    }
+    button {
+      @extend .btn;
+      padding: 10px;
+    }
+    .read {
+      @extend button;
+      min-width: 100px;
+    }
+    button:active {
+      @extend btn-active;
+    }
+  }
+
+  div[data-index]:nth-child(even) {
+    background-color: lightblue;
   }
 }

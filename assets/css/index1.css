@@ -7,11 +7,16 @@ html {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
   margin: 0;
   padding: 0;
   background-color: rgb(230, 240, 240);
 }
 body h1 {
+  width: 100%;
   text-align: center;
   margin: 0;
   margin-bottom: 50px;
@@ -26,8 +31,7 @@ body p {
   font-size: 1.3rem;
   text-align: center;
 }
-
-.btn, .container div[data-index] button, .container div[data-index] .read, #myForm #submitBtn {
+.btn, .container div[data-index] button, .container div[data-index] .read, form #submitBtn, body button, body .container div[data-index] .read, .container div[data-index] body .read {
   padding: 20px;
   font-size: 1rem;
   cursor: pointer;
@@ -35,147 +39,159 @@ body p {
   border-radius: 10px;
 }
 
-btn-active, .container div[data-index] button:active, .container div[data-index] .read:active, #myForm #submitBtn:active {
+btn-active, .container div[data-index] button:active, .container div[data-index] .read:active, form #submitBtn:active, body button:active {
   background-color: #baecba;
 }
 
-#myForm {
+.show-form {
+  z-index: 2;
+  visibility: visible;
+  background-color: rgb(198, 217, 249);
+  border-radius: 10px;
+}
+
+form {
+  position: absolute;
   padding: 10px 30px;
   border-bottom: 3px solid;
-  min-width: 450px;
+  min-width: 400px;
+  max-width: 80%;
+  margin: 0 auto;
+  z-index: -1;
+  visibility: hidden;
+  top: 30vh;
+  border: 2px solid;
 }
-#myForm .main-section {
+form .main-section {
   background-color: rgb(240, 240, 240);
   border: 2px solid rgb(180, 180, 180);
   border-radius: 10px;
   box-shadow: 1px 1px 10px gray;
   padding: 20px;
-  margin: 0 auto;
-  min-width: 400px;
-  max-width: 80%;
   display: grid;
   grid-template: repeat(2, auto)/repeat(2, auto);
   gap: 20px;
   column-gap: 50px;
   flex-wrap: wrap;
 }
-#myForm .main-section .section-1 {
+form .main-section .section-1 {
   padding: 0;
 }
-#myForm .main-section .section-1 label {
+form .main-section .section-1 label {
   display: block;
   font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: 2px;
   padding-left: 4px;
 }
-#myForm .main-section .section-1 input, #myForm .main-section .section-1 .error, #myForm .main-section .section-1 select {
+form .main-section .section-1 input, form .main-section .section-1 .error, form .main-section .section-1 select {
   width: 100%;
   padding: 8px;
   border-radius: 8px;
   font-size: 18px;
   display: block;
 }
-#myForm .main-section .section-1 select {
+form .main-section .section-1 select {
   padding: 8px 40px;
   background-color: white;
   border: 2px solid;
 }
-#myForm .main-section .section-1 .error {
+form .main-section .section-1 .error {
   color: red;
   padding: 10px 0;
 }
-#myForm .main-section .section-2 {
+form .main-section .section-2 {
   padding: 0;
 }
-#myForm .main-section .section-2 label {
+form .main-section .section-2 label {
   display: block;
   font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: 2px;
   padding-left: 4px;
 }
-#myForm .main-section .section-2 input, #myForm .main-section .section-2 .error, #myForm .main-section .section-2 select {
+form .main-section .section-2 input, form .main-section .section-2 .error, form .main-section .section-2 select {
   width: 100%;
   padding: 8px;
   border-radius: 8px;
   font-size: 18px;
   display: block;
 }
-#myForm .main-section .section-2 select {
+form .main-section .section-2 select {
   padding: 8px 40px;
   background-color: white;
   border: 2px solid;
 }
-#myForm .main-section .section-2 .error {
+form .main-section .section-2 .error {
   color: red;
   padding: 10px 0;
 }
-#myForm .main-section .section-3 {
+form .main-section .section-3 {
   padding: 0;
 }
-#myForm .main-section .section-3 label {
+form .main-section .section-3 label {
   display: block;
   font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: 2px;
   padding-left: 4px;
 }
-#myForm .main-section .section-3 input, #myForm .main-section .section-3 .error, #myForm .main-section .section-3 select {
+form .main-section .section-3 input, form .main-section .section-3 .error, form .main-section .section-3 select {
   width: 100%;
   padding: 8px;
   border-radius: 8px;
   font-size: 18px;
   display: block;
 }
-#myForm .main-section .section-3 select {
+form .main-section .section-3 select {
   padding: 8px 40px;
   background-color: white;
   border: 2px solid;
 }
-#myForm .main-section .section-3 .error {
+form .main-section .section-3 .error {
   color: red;
   padding: 10px 0;
 }
-#myForm .main-section .section-4 {
+form .main-section .section-4 {
   padding: 0;
 }
-#myForm .main-section .section-4 label {
+form .main-section .section-4 label {
   display: block;
   font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: 2px;
   padding-left: 4px;
 }
-#myForm .main-section .section-4 input, #myForm .main-section .section-4 .error, #myForm .main-section .section-4 select {
+form .main-section .section-4 input, form .main-section .section-4 .error, form .main-section .section-4 select {
   width: 100%;
   padding: 8px;
   border-radius: 8px;
   font-size: 18px;
   display: block;
 }
-#myForm .main-section .section-4 select {
+form .main-section .section-4 select {
   padding: 8px 40px;
   background-color: white;
   border: 2px solid;
 }
-#myForm .main-section .section-4 .error {
+form .main-section .section-4 .error {
   color: red;
   padding: 10px 0;
 }
-#myForm input:invalid, #myForm .main-section .section-1 select:invalid, #myForm .main-section .section-1 .error:invalid, #myForm .main-section .section-2 select:invalid, #myForm .main-section .section-2 .error:invalid, #myForm .main-section .section-3 select:invalid, #myForm .main-section .section-3 .error:invalid, #myForm .main-section .section-4 select:invalid, #myForm .main-section .section-4 .error:invalid {
+form input:invalid, form .main-section .section-1 select:invalid, form .main-section .section-1 .error:invalid, form .main-section .section-2 select:invalid, form .main-section .section-2 .error:invalid, form .main-section .section-3 select:invalid, form .main-section .section-3 .error:invalid, form .main-section .section-4 select:invalid, form .main-section .section-4 .error:invalid {
   border: 2px solid red;
   background-color: rgb(230, 171, 171);
 }
-#myForm input:valid:not(select:valid), #myForm .main-section .section-1 select:valid:not(select:valid), #myForm .main-section .section-1 .error:valid:not(select:valid), #myForm .main-section .section-2 select:valid:not(select:valid), #myForm .main-section .section-2 .error:valid:not(select:valid), #myForm .main-section .section-3 select:valid:not(select:valid), #myForm .main-section .section-3 .error:valid:not(select:valid), #myForm .main-section .section-4 select:valid:not(select:valid), #myForm .main-section .section-4 .error:valid:not(select:valid) {
+form input:valid:not(select:valid), form .main-section .section-1 select:valid:not(select:valid), form .main-section .section-1 .error:valid:not(select:valid), form .main-section .section-2 select:valid:not(select:valid), form .main-section .section-2 .error:valid:not(select:valid), form .main-section .section-3 select:valid:not(select:valid), form .main-section .section-3 .error:valid:not(select:valid), form .main-section .section-4 select:valid:not(select:valid), form .main-section .section-4 .error:valid:not(select:valid) {
   border: 2px solid blue;
   background-color: rgb(153, 186, 226);
 }
-#myForm #submitBtn {
+form #submitBtn {
   display: block;
   margin: 20px auto;
 }
 .container {
+  width: 100%;
   margin-top: 30px;
 }
 .container div[data-index] {
@@ -201,10 +217,10 @@ btn-active, .container div[data-index] button:active, .container div[data-index]
   min-width: 150px;
 }
 .container div[data-index] button, .container div[data-index] .read {
-  padding: 10px;
+  padding: 10px 20px;
 }
 .container div[data-index] .read {
-  min-width: 100px;
+  min-width: 150px;
 }
 .container div[data-index]:nth-child(even) {
   background-color: lightblue;

@@ -7,10 +7,15 @@ html {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
   margin: 0;
   padding: 0;
   background-color: rgb(230, 240, 240);
   h1 {
+    width: 100%;
     text-align: center;
     margin: 0;
     margin-bottom: 50px;
@@ -25,6 +30,12 @@ body {
     font-size: 1.3rem;
     text-align: center;
   }
+  button {
+    @extend .btn;
+  }
+  button:active{
+    @extend btn-active;
+  }
 }
 
 .btn {
@@ -38,20 +49,29 @@ body {
 btn-active {
   background-color: #baecba;
 }
-
-#myForm {
+.show-form{
+  z-index: 2;
+  visibility: visible;
+  background-color: rgb(198, 217, 249);
+  border-radius: 10px;
+}
+form {
+  position: absolute;
   padding: 10px 30px;
   border-bottom: 3px solid;
-  min-width: 450px;
+  min-width: 400px;
+  max-width: 80%;
+  margin: 0 auto;
+  z-index: -1;
+  visibility: hidden;
+  top: 30vh;
+  border: 2px solid;
   .main-section {
     background-color: rgb(240, 240, 240);
     border: 2px solid rgb(180, 180, 180);
     border-radius: 10px;
     box-shadow: 1px 1px 10px gray;
     padding: 20px;
-    margin: 0 auto;
-    min-width: 400px;
-    max-width: 80%;
     display: grid;
     grid-template: repeat(2, auto) / repeat(2, auto);
     gap: 20px;
@@ -115,6 +135,7 @@ btn-active {
 }
 
 .container {
+  width: 100%;
   margin-top: 30px;
   div[data-index] {
     display: block;
@@ -144,11 +165,11 @@ btn-active {
     }
     button {
       @extend .btn;
-      padding: 10px;
+      padding: 10px 20px;
     }
     .read {
       @extend button;
-      min-width: 100px;
+      min-width: 150px;
     }
     button:active {
       @extend btn-active;

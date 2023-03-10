@@ -58,7 +58,7 @@ form {
   min-width: 200px;
   max-width: 80%;
   top: 30vh;
-  border: 2px solid;
+  border: 3px solid black;
   border-radius: 30px;
   position: absolute;
   background-color: rgb(212, 238, 242);
@@ -72,14 +72,12 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 5px;
     column-gap: 50px;
     flex-wrap: wrap;
 
     @for $i from 1 to 5 {
       .section-#{$i} {
-        padding: 0;
-
         label {
           display: block;
           font-size: 1.2rem;
@@ -105,7 +103,7 @@ form {
         .error {
           @extend input;
           color: red;
-          padding: 10px 0;
+          padding: 2px 0;
         }
       }
     }

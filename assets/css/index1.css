@@ -53,7 +53,7 @@ form {
   min-width: 200px;
   max-width: 80%;
   top: 30vh;
-  border: 2px solid;
+  border: 3px solid black;
   border-radius: 30px;
   position: absolute;
   background-color: rgb(212, 238, 242);
@@ -68,12 +68,9 @@ form .main-section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 5px;
   column-gap: 50px;
   flex-wrap: wrap;
-}
-form .main-section .section-1 {
-  padding: 0;
 }
 form .main-section .section-1 label {
   display: block;
@@ -96,10 +93,7 @@ form .main-section .section-1 select {
 }
 form .main-section .section-1 .error {
   color: red;
-  padding: 10px 0;
-}
-form .main-section .section-2 {
-  padding: 0;
+  padding: 2px 0;
 }
 form .main-section .section-2 label {
   display: block;
@@ -122,10 +116,7 @@ form .main-section .section-2 select {
 }
 form .main-section .section-2 .error {
   color: red;
-  padding: 10px 0;
-}
-form .main-section .section-3 {
-  padding: 0;
+  padding: 2px 0;
 }
 form .main-section .section-3 label {
   display: block;
@@ -148,10 +139,7 @@ form .main-section .section-3 select {
 }
 form .main-section .section-3 .error {
   color: red;
-  padding: 10px 0;
-}
-form .main-section .section-4 {
-  padding: 0;
+  padding: 2px 0;
 }
 form .main-section .section-4 label {
   display: block;
@@ -174,7 +162,7 @@ form .main-section .section-4 select {
 }
 form .main-section .section-4 .error {
   color: red;
-  padding: 10px 0;
+  padding: 2px 0;
 }
 form input:invalid, form .main-section .section-1 select:invalid, form .main-section .section-1 .error:invalid, form .main-section .section-2 select:invalid, form .main-section .section-2 .error:invalid, form .main-section .section-3 select:invalid, form .main-section .section-3 .error:invalid, form .main-section .section-4 select:invalid, form .main-section .section-4 .error:invalid {
   border: 2px solid red;

@@ -44,23 +44,20 @@ btn-active, .container div[data-index] button:active, form .form-btns button:act
 }
 
 .show-form {
-  z-index: 2;
-  visibility: visible;
-  background-color: rgb(198, 217, 249);
-  border-radius: 10px;
+  transform: scale(1);
 }
 
 form {
-  position: absolute;
+  transform: scale(0);
   padding: 10px 30px;
-  border-bottom: 3px solid;
   min-width: 400px;
   max-width: 80%;
-  margin: 0 auto;
-  z-index: -1;
-  visibility: hidden;
   top: 30vh;
   border: 2px solid;
+  border-radius: 10px;
+  position: absolute;
+  background-color: rgb(198, 217, 249);
+  transition: transform 0.3s ease-out;
 }
 form .main-section {
   background-color: rgb(240, 240, 240);
@@ -187,7 +184,7 @@ form input:valid:not(select:valid), form .main-section .section-1 select:valid:n
   background-color: rgb(153, 186, 226);
 }
 form .form-btns {
-  margin: 20px;
+  margin-top: 20px;
   display: flex;
   justify-content: center;
   gap: 10px;

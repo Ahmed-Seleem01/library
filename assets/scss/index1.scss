@@ -49,23 +49,20 @@ body {
 btn-active {
   background-color: #baecba;
 }
-.show-form{
-  z-index: 2;
-  visibility: visible;
-  background-color: rgb(198, 217, 249);
-  border-radius: 10px;
+.show-form{  
+  transform: scale(1);
 }
 form {
-  position: absolute;
+  transform: scale(0);
   padding: 10px 30px;
-  border-bottom: 3px solid;
   min-width: 400px;
   max-width: 80%;
-  margin: 0 auto;
-  z-index: -1;
-  visibility: hidden;
   top: 30vh;
   border: 2px solid;
+  border-radius: 10px;
+  position: absolute;
+  background-color: rgb(198, 217, 249);
+  transition: transform 0.3s ease-out;
   .main-section {
     background-color: rgb(240, 240, 240);
     border: 2px solid rgb(180, 180, 180);
@@ -124,7 +121,7 @@ form {
   }
 
   .form-btns{
-    margin: 20px;
+    margin-top: 20px;
     display: flex;
     justify-content: center;
     gap: 10px;

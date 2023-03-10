@@ -19,17 +19,16 @@ body h1 {
   width: 100%;
   text-align: center;
   margin: 0;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   padding: 30px;
   background-color: gray;
   color: white;
 }
 body h2 {
-  text-align: center;
+  margin-top: 80px;
 }
 body p {
   font-size: 1.3rem;
-  text-align: center;
 }
 .btn, .container div[data-index] .read, .container div[data-index] button, form .form-btns button, body button {
   padding: 20px;
@@ -52,7 +51,7 @@ form {
   padding: 10px 30px;
   min-width: 200px;
   max-width: 80%;
-  top: 30vh;
+  top: 15vh;
   border: 3px solid black;
   border-radius: 30px;
   position: absolute;
@@ -180,7 +179,7 @@ form .form-btns {
 }
 .container {
   width: 100%;
-  margin-top: 30px;
+  margin-top: -10px;
 }
 .container div[data-index] {
   display: block;
@@ -210,7 +209,7 @@ form .form-btns {
 }
 .container div[data-index] .read {
   padding: 15px 20px;
-  min-width: 150px;
+  min-width: 120px;
 }
 .container div[data-index]:nth-child(even) {
   background-color: lightblue;

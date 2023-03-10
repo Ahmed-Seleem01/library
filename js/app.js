@@ -149,6 +149,10 @@ formElm.addEventListener("submit", (e) => {
     checkValidity(pages);
   }
   
-
   // console.log(myLibrary);
 });
+
+const cancel = document.querySelector("#cancel");
+cancel.addEventListener("click", ()=>{
+  formElm.classList.remove("show-form")
+})

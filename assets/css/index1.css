@@ -31,7 +31,7 @@ body p {
   font-size: 1.3rem;
   text-align: center;
 }
-.btn, .container div[data-index] button, .container div[data-index] .read, form #submitBtn, body button, body .container div[data-index] .read, .container div[data-index] body .read {
+.btn, .container div[data-index] .read, .container div[data-index] button, form .form-btns button, body button {
   padding: 20px;
   font-size: 1rem;
   cursor: pointer;
@@ -39,7 +39,7 @@ body p {
   border-radius: 10px;
 }
 
-btn-active, .container div[data-index] button:active, .container div[data-index] .read:active, form #submitBtn:active, body button:active {
+btn-active, .container div[data-index] button:active, form .form-btns button:active, body button:active {
   background-color: #baecba;
 }
 
@@ -186,9 +186,11 @@ form input:valid:not(select:valid), form .main-section .section-1 select:valid:n
   border: 2px solid blue;
   background-color: rgb(153, 186, 226);
 }
-form #submitBtn {
-  display: block;
-  margin: 20px auto;
+form .form-btns {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 .container {
   width: 100%;
@@ -208,6 +210,7 @@ form #submitBtn {
   display: flex;
   gap: 10px;
   justify-content: center;
+  align-items: center;
 }
 .container div[data-index] div:nth-child(1) {
   justify-content: flex-start;
@@ -216,10 +219,11 @@ form #submitBtn {
 .container div[data-index] div:not(div:nth-child(1)) {
   min-width: 150px;
 }
-.container div[data-index] button, .container div[data-index] .read {
-  padding: 10px 20px;
+.container div[data-index] button {
+  padding: 15px 20px;
 }
 .container div[data-index] .read {
+  padding: 15px 20px;
   min-width: 150px;
 }
 .container div[data-index]:nth-child(even) {

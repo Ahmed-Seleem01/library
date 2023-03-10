@@ -4,6 +4,13 @@ const lib = localStorage.getItem("myLibraryStorage")
   : [];
 const myLibrary = [...lib];
 
+const addBook = document.querySelector("button#add-book");
+  addBook.addEventListener("click", (e)=>{
+    console.log(e.target)
+    const myForm = document.querySelector("#myForm")
+    myForm.classList.add("show-form")
+    console.log(myForm)
+  })
 // Class function to create book objects
 class Book {
   constructor(title = "", author = "", pagesNum = "", read = "Not read yet") {
@@ -120,6 +127,7 @@ const formElm = document.querySelector("#myForm");
 formElm.addEventListener("submit", (e) => {
   e.preventDefault();
   if (title.validity.valid && author.validity.valid && pages.validity.valid) {
+    formElm.classList.remove("show-form")
     const formElements = document.querySelector("#myForm").elements;
     const book = new Book(
       formElements[0].value,
@@ -141,5 +149,6 @@ formElm.addEventListener("submit", (e) => {
     checkValidity(pages);
   }
   
+
   // console.log(myLibrary);
 });

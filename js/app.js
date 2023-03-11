@@ -1,17 +1,17 @@
 // Array to store books
+// Load it from localStorage if it is existed
 const lib = localStorage.getItem("myLibraryStorage")
   ? JSON.parse(localStorage.getItem("myLibraryStorage"))
   : [];
 const myLibrary = [...lib];
 
+// Add function to display form 
 const addBook = document.querySelector("button#add-book");
   addBook.addEventListener("click", (e)=>{
-    console.log(e.target)
     const myForm = document.querySelector("#myForm")
     myForm.classList.add("show-form")
-    console.log(myForm)
   })
-// Class function to create book objects
+// Class to create book objects
 class Book {
   constructor(title = "", author = "", pagesNum = "", read = "Not read yet") {
     this.author = author;
@@ -22,7 +22,6 @@ class Book {
 
   // Change read status
   readStatus(e) {
-    // console.log(this)
     if (this.read === "Not read yet") {
       this.read = "Read";
       e.target.style.backgroundColor = "green";
@@ -34,6 +33,9 @@ class Book {
   }
 }
 
+/*
+  Functions to manipulate book objects in the array 
+*/
 function addBookToLibrary(book) {
   myLibrary.push(book);
 }
@@ -61,6 +63,7 @@ function readCondition(e) {
   localStorage.setItem("myLibraryStorage", JSON.stringify(myLibrary));
 }
 
+// Function to add buttons to book div
 function addButtons() {
   const removeBtn = createBtn("Remove");
   const readBtn = createBtn("Read");
@@ -72,6 +75,7 @@ function addButtons() {
   return btnContainer;
 }
 
+// Function to show books in divs each time change happen
 function showBooks(arr) {
   const arr1 = [...arr];
   const container = document.querySelector(".container");
@@ -81,7 +85,6 @@ function showBooks(arr) {
       arr1[i] = Object.assign(arr1[i], {
         readStatus: Book.prototype.readStatus,
       });
-      // console.log(arr1[i])
     }
     const bookDiv = document.createElement("div");
     const bookInfo = document.createElement("div");
@@ -111,7 +114,7 @@ const pages = document.querySelector("#pagesNum");
 
 function checkValidity(targetElm) {
   const err = document.querySelector(`#${targetElm.id} + span.error`);
-  // console.log(targetElm)
+ 
   if (targetElm.validity.valueMissing) {
     err.textContent = "type something";
   } else if (targetElm.validity.typeMismatch) {
@@ -124,6 +127,7 @@ title.addEventListener("input", checkValidity.bind(null, title));
 author.addEventListener("input", checkValidity.bind(null, author));
 pages.addEventListener("input", checkValidity.bind(null, pages));
 
+// Add logic to submit the form if it is valid otherwise give an error message
 const formElm = document.querySelector("#myForm");
 formElm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -140,7 +144,6 @@ formElm.addEventListener("submit", (e) => {
     formElements[1].value = "";
     formElements[2].value = "";
 
-    // console.log(formElements[3].value);
     addBookToLibrary(book);
     localStorage.setItem('myLibraryStorage', JSON.stringify(myLibrary))
     showBooks(myLibrary);
@@ -150,9 +153,9 @@ formElm.addEventListener("submit", (e) => {
     checkValidity(pages);
   }
   
-  // console.log(myLibrary);
 });
 
+// Add cancel functionality to hide the form
 const cancel = document.querySelector("#cancel");
 cancel.addEventListener("click", ()=>{
   formElm.classList.remove("show-form")

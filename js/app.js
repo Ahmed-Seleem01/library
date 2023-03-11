@@ -58,6 +58,7 @@ function readCondition(e) {
   const parentElm = e.target.parentElement.parentElement;
   const elmIndex = parentElm.getAttribute("data-index");
   e.target.textContent = myLibrary[elmIndex].readStatus(e);
+  localStorage.setItem("myLibraryStorage", JSON.stringify(myLibrary));
 }
 
 function addButtons() {
